@@ -61,7 +61,7 @@ export default function LoginPage() {
 
         {/* Testimonial */}
         <div className="mt-12 flex flex-col items-center">
-          <Image src="/testimonial-user.png" alt="Mayson Allen" width={80} height={80} className="rounded-full mb-4" />
+         {/*<Image src="/testimonial-user.png" alt="Mayson Allen" width={80} height={80} className="rounded-full mb-4" />*/}
           <p className="text-center text-sm">
             <strong>Mayson Allen</strong> <br />
             Clinic Manager at London Care
