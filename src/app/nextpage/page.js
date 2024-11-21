@@ -14,7 +14,7 @@ const JobButton = ({ title, onClick }) => (
 );
 
 const InterviewPage = () => {
-  const searchParams = useSearchParams();
+  //const searchParams = useSearchParams();
   const [selected, setSelected] = useState('');
   const router = useRouter();
   const [domains, setDomains] = useState(null);
