@@ -15,7 +15,7 @@ export default function InterviewPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]); // Dynamic questions state
   const [isRecording, setIsRecording] = useState(false);
-  const [isCameraOn, setIsCameraOn] = useState(false);
+  const [isCameraOn, setIsCameraOn] = useState(true);
   const [time, setTime] = useState(0);
   const [inputValue, setInputValue] = useState('');
   const videoRef = useRef(null);
