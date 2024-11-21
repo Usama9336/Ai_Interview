@@ -20,10 +20,9 @@ export default function InterviewPage() {
   const [inputValue, setInputValue] = useState('');
   const videoRef = useRef(null);
   const timerRef = useRef(null);
-  const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
   // Fetch questions based on skills stored in local storage
-  useEffect(() => {
+  {/*useEffect(() => {
     const fetchQuestions = async () => {
       try {
         const skills = JSON.parse(localStorage.getItem('skills')) || [];
@@ -31,9 +30,21 @@ export default function InterviewPage() {
           console.error('No skills found in local storage.');
           return;
         }
-
-        const response = await axios.post(
-          'https://9bca-2409-40d0-100a-302b-70ac-7334-48b9-6ddd.ngrok-free.app/api/v1/resume/generate_questions',
+      */}
+       const newquestions = [
+            'Can you describe the day-to-day responsibilities of this role?',
+           ' What does success look like in this position?',
+          'Are there opportunities for growth or additional responsibilities in the future?',
+          'How would you describe the management style of the person I’d be reporting to?',
+'What qualities do you value most in a team member for this role?',
+'How often does the team meet or communicate on progress?',
+'What are the company’s short-term and long-term goals?',
+'How does this department contribute to the overall success of the company?',
+'What are the company’s values and how do they align with the values of this department?',
+        ]
+        const isLastQuestion = currentQuestionIndex === newquestions.length - 1;
+        {/*const response = await axios.post(
+          'https://4310-45-115-190-109.ngrok-free.app/api/v1/resume/generate_questions',
           { skills }, // Pass the skills array
           {
             headers: {
@@ -50,7 +61,7 @@ export default function InterviewPage() {
 
     fetchQuestions();
   }, []);
-
+*/}
   // Initialize and manage camera feed
   useEffect(() => {
     const enableCamera = async () => {
@@ -91,7 +102,7 @@ export default function InterviewPage() {
   }, [isRecording]);
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < newquestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
       setTime(0);
       setIsRecording(false);
@@ -128,7 +139,7 @@ export default function InterviewPage() {
             </button>
 
             <div className="flex items-center space-x-4">
-              {questions.map((_, index) => (
+              {newquestions.map((_, index) => (
                 <div
                   key={index}
                   className={`w-2 h-2 rounded-full ${
@@ -163,7 +174,7 @@ export default function InterviewPage() {
           {/* Question Card */}
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <h2 className="text-xl text-center font-semibold mb-8">
-              {questions[currentQuestionIndex] || 'Loading question...'}
+              {newquestions[currentQuestionIndex] || 'Loading question...'}
             </h2>
 
             <div className="text-center text-gray-400 text-xl mb-8">
@@ -208,7 +219,7 @@ export default function InterviewPage() {
             <div
               className="bg-purple-600 h-2 rounded-full transition-all duration-300"
               style={{
-                width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
+                width: `${((currentQuestionIndex + 1) / newquestions.length) * 100}%`,
               }}
             />
           </div>

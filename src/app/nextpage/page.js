@@ -18,7 +18,7 @@ const InterviewPage = () => {
   const [selected, setSelected] = useState('');
   const router = useRouter();
   const [domains, setDomains] = useState(null);
-  const storedDomains = JSON.parse(localStorage.getItem("domains"));
+  {/*const storedDomains = JSON.parse(localStorage.getItem("domains"));
   console.log('Stored Domains:', storedDomains);
   const domainData = storedDomains.data; // Access the `data` object
 
@@ -26,7 +26,7 @@ const InterviewPage = () => {
   const domainNames = Object.entries(domainData).map(([key, value]) => ({
     domain: value.domain,
     skills: value.skills,
-  }));
+  }));*/}
   // useEffect(() => {
   //   // Parse domains from query string
   //   if (router.query.domains) {
@@ -50,6 +50,68 @@ const InterviewPage = () => {
   // Extract domain names
   const domainNames = Object.values(domains).map((domainObj) => domainObj?.domain || 'Unknown Domain');*/}
 
+  const domainName = [
+
+  {
+    index: 0,
+    domain: "Software Developer",
+    skills: [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+    ]
+      
+  },
+  {
+    index: 1,
+    domain: "Data Scientist",
+    skills: [      
+      "Python",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "Keras",
+      "Matplotlib",
+      "Seaborn",
+    ]
+  },
+  {
+    index: 2,
+    domain: "UX Designer",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Bootstrap",
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+    ]
+  },
+  {
+    index: 3,
+    domain: "Full Stack Developer",
+    skills: [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Docker",
+      "Git",
+      "Heroku",
+      "AWS",
+    ]
+  },
+
+]
 
   const handledomainskills = () => {
     localStorage.setItem("skills",)
@@ -81,7 +143,7 @@ const InterviewPage = () => {
 
           {/* Dynamic Job Buttons */}
           <div className="grid grid-cols-2 gap-4 mb-8">
-            {domainNames.map((item, index) => (
+            {domainName.map((item, index) => (
               <Link
               href={{
                 pathname: '/interviewpage',

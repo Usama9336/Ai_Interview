@@ -47,7 +47,7 @@ const LandingPage = () => {
       const formData = new FormData();
       formData.append('file', selectedFile);
   
-      const response = await axios.post('https://9bca-2409-40d0-100a-302b-70ac-7334-48b9-6ddd.ngrok-free.app/api/v1/resume/extract_domains', formData, {
+      const response = await axios.post('https://4310-45-115-190-109.ngrok-free.app/api/v1/resume/extract_domains', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -66,6 +66,7 @@ const LandingPage = () => {
       } else {
         // Fallback error handling
         setUploadError(error.response?.data?.message || 'Error processing resume');
+        router.push('/nextpage')
       }
     } finally {
       setIsUploading(false);
